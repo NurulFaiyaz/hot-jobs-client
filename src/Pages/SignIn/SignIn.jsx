@@ -1,32 +1,29 @@
-
-import Lottie from 'lottie-react';
+import Lottie from "lottie-react";
 import registerLottie from '../../assets/Lottie/registerLottie.json'
-import { useContext } from 'react';
-import AuthContext from '../../Context/AuthContext/AuthContext';
+import { useContext } from "react";
+import AuthContext from "../../Context/AuthContext/AuthContext";
+
+const SignIn = () => {
+
+    const { signInUser } = useContext(AuthContext);
 
 
-const Register = () => {
-
-    const {createUser} = useContext(AuthContext);
-
-
-    const handleRegister = e => {
+    const handleSignIn = e => {
         e.preventDefault();
-
         const form = e.target;
-        const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name, email, password)
-        createUser(email, password)
-        .then(result =>{
-            console.log(result)
-        })
-        .catch(err =>{
-            console.log(err)
-        })
-    }
+        console.log(email, password)
+        signInUser(email, password)
+            .then(result => {
+                console.log(result)
+            })
+            .catch(err => {
+                console.log(err)
+            })
 
+
+    }
 
 
     return (
@@ -36,19 +33,10 @@ const Register = () => {
                     <Lottie animationData={registerLottie}></Lottie>
                 </div>
                 <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-                    <h1 className="mx-auto pt-8 text-5xl font-bold">Register</h1>
+                    <h1 className="mx-auto pt-8 text-5xl font-bold">Sign In</h1>
 
-                    <form onSubmit={handleRegister} className="card-body">
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Name</span>
-                            </label>
-                            <input
-                                name='name'
-                                type="text"
-                                placeholder="name"
-                                className="input input-bordered" required />
-                        </div>
+                    <form onSubmit={handleSignIn} className="card-body">
+
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
@@ -68,10 +56,12 @@ const Register = () => {
                                 type="password"
                                 placeholder="password"
                                 className="input input-bordered" required />
-                           
+                            <label className="label">
+                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                            </label>
                         </div>
                         <div className="form-control mt-6">
-                            <button type='submit' className="btn btn-primary">Register</button>
+                            <button type='submit' className="btn btn-primary">Sign In</button>
                         </div>
                     </form>
                 </div>
@@ -80,4 +70,4 @@ const Register = () => {
     );
 };
 
-export default Register;
+export default SignIn;
