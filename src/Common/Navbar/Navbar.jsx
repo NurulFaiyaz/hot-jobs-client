@@ -20,7 +20,7 @@ const Navbar = () => {
     const links = <>
 
         <NavLink to={'/'}>Home</NavLink>
-        <NavLink>Parent</NavLink>
+        <NavLink to={'/myApplications'}>My Applications</NavLink>
         <NavLink>Item 3</NavLink>
     </>
 
