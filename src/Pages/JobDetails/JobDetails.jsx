@@ -33,7 +33,7 @@ const JobDetails = () => {
                     </div>
                     <div className=" flex items-center py-2 justify-between">
                         <p>Salary: {salaryRange.min}-{salaryRange.max}</p>
-                        <Link to={`jobs/${_id}`}>
+                        <Link to={`/jobApply/${_id}`}>
                             <button className="btn btn-primary">Apply Now</button>
                         </Link>
                     </div>
