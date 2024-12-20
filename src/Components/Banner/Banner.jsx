@@ -16,7 +16,7 @@ const Banner = () => {
                         src="https://cdn.pixabay.com/photo/2023/07/07/08/50/sharepoint-training-8112055_1280.jpg"
                         className="max-w-sm rounded-[40px] rounded-b-none rounded-bl-[40px] border-green-600 shadow-2xl border-8 border-t-0 border-l-0" />
                 </div>
-                <div className="">
+                <div className="w-1/2">
                     <motion.h1
                         initial={{ opacity: 0, scale: 0 }}
                         animate={{ opacity: 1, scale: 1 }}
