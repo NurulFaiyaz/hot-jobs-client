@@ -1,12 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
+const JobDetails = () => {
 
-const JobCard = ({ job }) => {
-
-    const { category, company, company_logo, applicationDeadline, description, hr_name, hr_email, jobType, location, requirements, salaryRange, _id } = job;
+    const job = useLoaderData()
     console.log(job)
+    const { category, company, company_logo, applicationDeadline, description, hr_name, hr_email, jobType, location, requirements, salaryRange, _id } = job;
+
     return (
-        <div className=" mx-auto">
+        <div className="w-8/12 mx-auto my-10">
             <div className="card card-compact bg-base-100 shadow-xl">
                 <div className="flex items-center">
                     <figure>
@@ -42,4 +43,4 @@ const JobCard = ({ job }) => {
     );
 };
 
-export default JobCard;
+export default JobDetails;
